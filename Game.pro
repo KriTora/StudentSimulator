@@ -10,6 +10,7 @@ SOURCES += \
     MainWindowEvents.cpp \
     ShopEvents.cpp \
     dateprocessor.cpp \
+    educationEvents.cpp \
     main.cpp \
     mainwindow.cpp
 

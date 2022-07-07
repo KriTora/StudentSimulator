@@ -18,15 +18,16 @@ void MainWindow::quit()
 void MainWindow::startGame()
 {
     //в случае смерти героя игра устанавливает флажок game_over, который сигнализирует игре сбросить все игровые данные
+    Start_Game->show();
     if(game_over == true)
     {
         money = 0,
-        day = 1, month = 1, year = 2000,
+        day = 1, month = 9, year = 2021,
         satiety = 100.f, hunger = 0.5f,
         mental_condition = 100.f, tireness = 0.5f,HP=100.f,damage=0.0f,
         jobID = 0,
         xp = 0;
-
+        chance=0;
         jobStatus(jobID);
 
         game_over = false;
@@ -43,6 +44,7 @@ void MainWindow::startGame()
     ui->progressBar_hunger->            setValue(satiety);                                                                                      //а здесь выводы для того, чтобы полоски изначально не были пустыми
     ui->progressBar_mental_condition->  setValue(mental_condition);
     ui->progressBar_health->            setValue(HP);
+    ui->progressBar_chance->            setValue(chance);
 
 }
 
@@ -59,7 +61,7 @@ void MainWindow::onTick()
     ui -> progressBar_health -> setValue(HP);
     mental_condition -= tireness;
     ui->progressBar_mental_condition->setValue(mental_condition);
-
+    ui->progressBar_chance->setValue(chance);
     //за условие гибели беру меньше тысячной, потому что ещё не знаю, насколько сильно имущество будет сокращать расходы, иначе герой может умереть немного раньше, чем нужно
     if(satiety < 0.001)
     {
@@ -86,7 +88,31 @@ void MainWindow::onTick()
         game_over = true;
         emit(backToTitle());
     }
-
+    if (chance >=100)
+    {
+        chance=100;
+    }
+    //Разблокировка опций работы
+    if (xp>=20) // если ты достиг 20 опыта, то открывается вторая работа,.так же надо сделать с остальными
+    {
+        ui->button_jobs_option2->setEnabled(true);
+    }
+    //Разблокировка опций сессии
+    if (((day==1)&&(month==1))||((day==1)&&(month==6)))
+    {
+        ui->button_session->setEnabled(true);
+        ui->button_session2->setEnabled(true);
+    }
+    if ((day==1)&&(month==1)&&((year==2023)||(year==2024)))
+    {
+        ui->button_courseWork->setEnabled(true);
+        ui->button_courseWork->setEnabled(true);
+    }
+    if ((day==1)&&(month==1)&&(year==2026))
+    {
+        ui->button_GraduateWork->setEnabled(true);
+        ui->button_GraduateWork2->setEnabled(true);
+    }
     if (satiety > 100.0f)           satiety             = 100.0f; //ограничители для характеристик героя
     if (mental_condition > 100.0f)  mental_condition    = 100.0f; //чтоб бессмертным не был
     if (HP > 100.0f) HP=100.0f;
@@ -124,7 +150,10 @@ void MainWindow::onTick()
             break;
         }
     }
+    if ((day == 1)&&(month==7)&&(year==2025))
+    {
 
+}
     //обновление всех выводов
     ui->label_date->                    setText     ("Дата: " + QString::number(day) + "." + QString::number(month) + "." + QString::number(year));
     ui->progressBar_hunger->            setFormat   ("Сытость: " + QString::number(satiety) + ", затрата на день: " + QString::number(hunger));
@@ -132,6 +161,7 @@ void MainWindow::onTick()
     ui->label_money->                   setText     ("Деньги: " + QString::number(money) + " р.");
     ui->progressBar_health->            setFormat   ("Здоровье" + QString::number(HP)+ ", потери в день: " + QString::number(damage));
     ui->label_xp->                      setText     ("Опыт: " + QString::number(xp));
+    ui->progressBar_chance->            setFormat   ("Шанс: " + QString::number(chance));
 
 }
 
@@ -165,7 +195,11 @@ void MainWindow::toLeisure()
     ui->stack->setCurrentIndex(4);
     setWindowTitle("Досуг");
 }
-
+void MainWindow::toEduc()
+{
+    ui->stack->setCurrentIndex(5);
+    setWindowTitle("Магазин");
+}
 void MainWindow::jobStatus(int id)
 {
     switch(id)
@@ -265,4 +299,3 @@ bool MainWindow::LoadSave()
     startGame();
     return true;
   }
-

@@ -39,13 +39,19 @@ private:
     float               damage;                       //урон, который можно получить из-за рандомных событий
     int                 jobID;                        //ID работы, 0 = безработный (начальное значение), в onTick() будет проверяться ID работы и каждое первое число будет начисляться соответствующая зарплата
     unsigned int        xp;                           //опыт
-
+    int                 chance;                       //шансы сдать сессию
+    bool                check;
     QMessageBox         *hunger_death;          //сообщение о гибели от голода
     QMessageBox         *mental_condition_death;//сообщение о гибели от психических проблем
     QMessageBox         *shop_notEnoughMoney;   //сообщение о недостатке денег для совершения покупки в магазине
     QMessageBox         *leisure_notEnoughMoney; // сообщение о недостатке денег для совершения покупки в окне досуга
+    QMessageBox        *Education_notEnoughMoney; // сообщение о недостатке денег для совершения покупки в окне образования
     QMessageBox         *HP_death;               // сообщение о смерти
-
+    QMessageBox         *Start_Game;             //сообщение о начале игры
+    QMessageBox         *FinalGame;              //соощение о конце игры
+    QMessageBox         *StartSession;           //сообщение о начале сессии
+    QMessageBox         *FinalSession;           //сообщение о конце сессии
+    QMessageBox         *ExamFail;            //сообщение о провале сессии
 private slots:
     void quit();            //кнопка "Выйти"
     void startGame();       //кнопка "Играть"
@@ -54,10 +60,10 @@ private slots:
     void toStats();         //кнопка "Характеристики"
     void toJobs();          //кнопка "Работа"
     void toShop();          //кнопка "Магазин"
+    void toEduc();          //кнопка "Образование"
     void toLeisure();       //кнопка "Досуг"
     bool LoadSave();        //загрузка сохранения
     bool Save();            //сохранение
-
     //слоты для магазина
     void shopOption1(); //Покопаться в мусорке
     void shopOption2(); //Съесть дошик
@@ -83,7 +89,6 @@ private slots:
     void jobsOption4();     //HTML-верстальщик в маленькой компании
     void jobsOption5();     //Backend-разработчик в маленькой компании
     void jobsOption6();     //Java-разработчик в средней компании
-
     // слоты для досуга
     void LeisureOption1();   //Помечтать о счастливом будущем
     void LeisureOption2();   //Покурить
@@ -98,6 +103,20 @@ private slots:
     void LeisureOption11();  //Сходить на свидание
     void LeisureOption12();  //Заняться экстремальными видами спорта
     void LeisureOption13();  //Отправиться в путешествие
+    //слоты для образования
+    void EducOption1();      //Сходить на пару
+    void EducOption2();      //Послушать лекцию
+    void EducOption3();      //Сделать д/з
+    void EducOption4();      // Купить книги
+    void EducOption5();      // Купить курсы
+    void EducOption6();      // Нанять репетитора
+    void EducOption7();     //  попробовать сдать сессию
+    void EducOption8();     // купить сессию
+    void EducOption9();    // написать курсовую
+    void EducOption10();  //купить курсовую
+    void EducOption11();  //написать диплом
+     void EducOption12(); //купить диплом
+
 };
 
 #endif // MAINWINDOW_H

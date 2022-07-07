@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     game_over       (false),
     money           (1200),
     day             (1),
-    month           (1),
-    year            (2000),
+    month           (9),
+    year            (2021),
     satiety         (100.f),
     hunger          (0.5f),
     mental_condition(100.f),
@@ -17,7 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     HP              (100.f),
     damage          (0.f),
     jobID           (0),
-    xp              (0)
+    xp              (0),
+    chance          (0)
 {
     ui->setupUi(this);
 
@@ -33,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->button_jobs,           &QPushButton::clicked, this, &MainWindow::toJobs);
     QObject::connect(ui->button_shop,           &QPushButton::clicked, this, &MainWindow::toShop);
     QObject::connect(ui->button_leisure,        &QPushButton::clicked, this, &MainWindow::toLeisure);
+    QObject::connect(ui->button_educ,           &QPushButton::clicked, this, &MainWindow::toEduc);
 
     //Магазин
     QObject::connect(ui->button_shop_option1,   &QPushButton::clicked, this, &MainWindow::shopOption1);
@@ -74,7 +76,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->button_leisure_option11,   &QPushButton::clicked, this, &MainWindow::LeisureOption11);
     QObject::connect(ui->button_leisure_option12,   &QPushButton::clicked, this, &MainWindow::LeisureOption12);
     QObject::connect(ui->button_leisure_option13,   &QPushButton::clicked, this, &MainWindow::LeisureOption13);
-
+    //образование
+    QObject::connect(ui->button_educ1,   &QPushButton::clicked, this, &MainWindow::EducOption1);
+    QObject::connect(ui->button_educ2,   &QPushButton::clicked, this, &MainWindow::EducOption2);
+    QObject::connect(ui->button_educ3,   &QPushButton::clicked, this, &MainWindow::EducOption3);
+    QObject::connect(ui->button_educ4,   &QPushButton::clicked, this, &MainWindow::EducOption4);
+    QObject::connect(ui->button_educ5,   &QPushButton::clicked, this, &MainWindow::EducOption5);
+    QObject::connect(ui->button_educ6,   &QPushButton::clicked, this, &MainWindow::EducOption6);
+    QObject::connect(ui->button_session,   &QPushButton::clicked, this, &MainWindow::EducOption7);
+    QObject::connect(ui->button_session2,   &QPushButton::clicked, this, &MainWindow::EducOption8);
+    QObject::connect(ui->button_courseWork,   &QPushButton::clicked, this, &MainWindow::EducOption9);
+    QObject::connect(ui->button_courseWork2,   &QPushButton::clicked, this, &MainWindow::EducOption10);
+    QObject::connect(ui->button_GraduateWork,   &QPushButton::clicked, this, &MainWindow::EducOption11);
+    QObject::connect(ui->button_GraduateWork2,   &QPushButton::clicked, this, &MainWindow::EducOption12);
     //настройка внешнего вида интерфейса
     setFixedSize                                        (1000, 600);
 
@@ -112,6 +126,11 @@ MainWindow::MainWindow(QWidget *parent) :
     shop_notEnoughMoney->               setModal        (true);
     leisure_notEnoughMoney =            new             QMessageBox();
     leisure_notEnoughMoney->            setModal        (true);
+    Start_Game =                        new             QMessageBox();
+    Start_Game->                        setText         ("Добро пожаловать в симмулятор студента, достигнете максимальных высот за ваши 4 года обучения");
+    FinalGame =                         new             QMessageBox();
+    FinalGame->                         setText         ("Поздравляем вы закончили учебу в университете");
+
 }
 MainWindow::~MainWindow()
 {
