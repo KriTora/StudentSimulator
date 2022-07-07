@@ -95,11 +95,29 @@ void MainWindow::onTick()
     {
         chance=100;
     }
+
     //Разблокировка опций работы
     if (xp>=20) // если ты достиг 20 опыта, то открывается вторая работа,.так же надо сделать с остальными
     {
         ui->button_jobs_option2->setEnabled(true);
     }
+    if (xp>=200)
+    {
+        ui->button_jobs_option3->setEnabled(true);
+    }
+    if (xp>=740)
+    {
+        ui->button_jobs_option4->setEnabled(true);
+    }
+    if (xp>=1100)
+    {
+        ui->button_jobs_option5->setEnabled(true);
+    }
+    if (xp>=1700)
+    {
+        ui->button_jobs_option6->setEnabled(true);
+    }
+
     //Разблокировка опций сессии
     if (((day==1)&&(month==1))||((day==1)&&(month==6)))
     {

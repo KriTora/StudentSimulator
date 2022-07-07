@@ -76,6 +76,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->button_leisure_option11,   &QPushButton::clicked, this, &MainWindow::LeisureOption11);
     QObject::connect(ui->button_leisure_option12,   &QPushButton::clicked, this, &MainWindow::LeisureOption12);
     QObject::connect(ui->button_leisure_option13,   &QPushButton::clicked, this, &MainWindow::LeisureOption13);
+
     //образование
     QObject::connect(ui->button_educ1,   &QPushButton::clicked, this, &MainWindow::EducOption1);
     QObject::connect(ui->button_educ2,   &QPushButton::clicked, this, &MainWindow::EducOption2);
@@ -89,6 +90,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->button_courseWork2,   &QPushButton::clicked, this, &MainWindow::EducOption10);
     QObject::connect(ui->button_GraduateWork,   &QPushButton::clicked, this, &MainWindow::EducOption11);
     QObject::connect(ui->button_GraduateWork2,   &QPushButton::clicked, this, &MainWindow::EducOption12);
+
     //настройка внешнего вида интерфейса
     setFixedSize                                        (1000, 600);
 
