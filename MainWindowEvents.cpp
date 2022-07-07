@@ -264,6 +264,8 @@ bool MainWindow::Save()
     save.damage             = damage;
     save.jobID              = jobID;
     save.tireness           = tireness;
+    save.xp                 = xp;
+    save.chance             = chance;
 
     std::ofstream fout;
     fout.open("save.dat", std::ios::binary | std::ios::out);
@@ -311,6 +313,8 @@ bool MainWindow::LoadSave()
     damage          = point.damage;
     jobID           = point.jobID;
     tireness        = point.tireness;
+    xp              = point.xp;
+    chance          =point.chance;
     jobStatus(jobID);
     }
 

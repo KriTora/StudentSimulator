@@ -12,6 +12,8 @@ struct save {       //структура для сейва, в слоте ест
     float               HP;
     float               damage;
     int                 jobID;
+    int                 xp;
+    int                 chance;
 };
 
 #endif // SAVES_H
