@@ -24,7 +24,7 @@ void MainWindow::startGame()
         day = 1, month = 1, year = 2000,
         satiety = 100.f, hunger = 0.5f,
         mental_condition = 100.f, tireness = 0.5f,HP=100.f,damage=0.0f,
-        jobID = 0, sjID = 0, sj = "Подработка: нет",
+        jobID = 0,
         xp = 0;
 
         jobStatus(jobID);
@@ -99,44 +99,28 @@ void MainWindow::onTick()
         case 0:
             break;
         case 1:
-            money += 8000;
+            money += 3500;
             xp += 5;
             break;
         case 2:
-            money += 10000;
+            money += 5000;
             xp += 7;
             break;
         case 3:
-            money += 15000;
+            money += 8200;
             xp += 10;
             break;
         case 4:
-            money += 17000;
+            money += 12000;
             xp += 15;
             break;
         case 5:
-            money += 25000;
+            money += 15000;
             xp += 21;
             break;
         case 6:
-            money += 45000;
+            money += 24999;
             xp += 30;
-            break;
-        case 7:
-            money += 70000;
-            xp += 39;
-            break;
-        case 8:
-            money += 100000;
-            xp += 50;
-            break;
-        case 9:
-            money += 160000;
-            xp += 80;
-            break;
-        case 10:
-            money += 320000;
-            xp += 100;
             break;
         }
     }
@@ -148,12 +132,6 @@ void MainWindow::onTick()
     ui->label_money->                   setText     ("Деньги: " + QString::number(money) + " р.");
     ui->progressBar_health->            setFormat   ("Здоровье" + QString::number(HP)+ ", потери в день: " + QString::number(damage));
     ui->label_xp->                      setText     ("Опыт: " + QString::number(xp));
-
-    if(sjID == 0) ui->label_sidejob->setText(sj);
-    else
-    {
-        ui->label_sidejob->setText(sj);
-    }
 
 }
 
@@ -181,6 +159,7 @@ void MainWindow::toShop()
     ui->stack->setCurrentIndex(3);
     setWindowTitle("Магазин");
 }
+
 void MainWindow::toLeisure()
 {
     ui->stack->setCurrentIndex(4);
@@ -195,34 +174,22 @@ void MainWindow::jobStatus(int id)
         ui->label_job->setText("Работа: безработный [0 р./мес.]");
         break;
     case 1:
-        ui->label_job->setText("Работа: уборщик в маке [8000 р./мес.]");
+        ui->label_job->setText("Работа: администратор группы в соцсети [3500 р./мес.]");
         break;
     case 2:
-        ui->label_job->setText("Работа: продавец-кассир в продуктовом магазине [10000 р./мес.]");
+        ui->label_job->setText("Работа: фрилансер-разнорабочий [5000 р./мес.]");
         break;
     case 3:
-        ui->label_job->setText("Работа: администратор в продуктовом магазине [15000 р./мес.]");
+        ui->label_job->setText("Работа: сборщик компьютеров в мастерской [8200 р./мес.]");
         break;
     case 4:
-        ui->label_job->setText("Работа: HTML-верстальщик в маленькой компании [17000 р./мес.]");
+        ui->label_job->setText("Работа: верстальщик сайтов [12000 р./мес.]");
         break;
     case 5:
-        ui->label_job->setText("Работа: backend-разработчик в маленькой компании [25000 р./мес.]");
+        ui->label_job->setText("Работа: помощник сисадмина [15000 р./мес.]");
         break;
     case 6:
-        ui->label_job->setText("Работа: Java-разработчик в средней компании [45000 р./мес.]");
-        break;
-    case 7:
-        ui->label_job->setText("Работа: C++-разработчик в крупной компании [70000 р./мес.]");
-        break;
-    case 8:
-        ui->label_job->setText("Работа: тимлид в крупном проекте [100000 р./мес.]");
-        break;
-    case 9:
-        ui->label_job->setText("Работа: глава отдела в международной компании [160000 р./мес.]");
-        break;
-    case 10:
-        ui->label_job->setText("Работа: CEO регионального филиала в международной компании [320000 р./мес.]");
+        ui->label_job->setText("Работа: разработчик в маленькой компании [24999 р./мес.]");
         break;
     }
 }

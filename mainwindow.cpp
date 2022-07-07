@@ -17,8 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     HP              (100.f),
     damage          (0.f),
     jobID           (0),
-    sjID            (0),
-    sj              ("Подработка: нет"),
     xp              (0)
 {
     ui->setupUi(this);
@@ -61,10 +59,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->button_jobs_option4,   &QPushButton::clicked, this, &MainWindow::jobsOption4);
     QObject::connect(ui->button_jobs_option5,   &QPushButton::clicked, this, &MainWindow::jobsOption5);
     QObject::connect(ui->button_jobs_option6,   &QPushButton::clicked, this, &MainWindow::jobsOption6);
-    QObject::connect(ui->button_jobs_option7,   &QPushButton::clicked, this, &MainWindow::jobsOption7);
-    QObject::connect(ui->button_jobs_option8,   &QPushButton::clicked, this, &MainWindow::jobsOption8);
-    QObject::connect(ui->button_jobs_option9,   &QPushButton::clicked, this, &MainWindow::jobsOption9);
-    QObject::connect(ui->button_jobs_option10,  &QPushButton::clicked, this, &MainWindow::jobsOption10);
 
     // Досуг
     QObject::connect(ui->button_leisure_option1,   &QPushButton::clicked, this, &MainWindow::LeisureOption1);

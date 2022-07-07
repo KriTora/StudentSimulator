@@ -48,7 +48,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="TitleScreen">
      <widget class="QWidget" name="verticalLayoutWidget">
@@ -151,13 +151,6 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLabel" name="label_sidejob">
-           <property name="text">
-            <string>Подработка:</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
        <item>
@@ -237,79 +230,51 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>120</y>
+        <y>130</y>
         <width>791</width>
-        <height>441</height>
+        <height>431</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="layout_jobs_options">
-       <item row="6" column="0">
-        <widget class="QPushButton" name="button_jobs_option7">
-         <property name="text">
-          <string>C++-разработчик в крупной компании [70000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="button_jobs_option2">
          <property name="text">
-          <string>Продавец-кассир в продуктовом магазине [10000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="button_jobs_option3">
-         <property name="text">
-          <string>Администратор в продуктовом магазине [15000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QPushButton" name="button_jobs_option8">
-         <property name="text">
-          <string>Тимлид в крупном проекте [100000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QPushButton" name="button_jobs_option5">
-         <property name="text">
-          <string>Backend-разработчик в маленькой компании [25000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QPushButton" name="button_jobs_option9">
-         <property name="text">
-          <string>Глава отдела в международной компании [160000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QPushButton" name="button_jobs_option6">
-         <property name="text">
-          <string>Java-разработчик в средней компании [45000 р./мес.]</string>
+          <string>Фрилансер-разнорабочий [5000 р./мес.]</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
         <widget class="QPushButton" name="button_jobs_option4">
          <property name="text">
-          <string>HTML-верстальщик в маленькой компании [17000 р./мес.]</string>
+          <string>Верстальщик сайтов [12000 р./мес.]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="button_jobs_option5">
+         <property name="text">
+          <string>Помощник сисадмина [15000 р./мес.]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="button_jobs_option3">
+         <property name="text">
+          <string>Сборщик компьютеров в мастерской [8200 р./мес.]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="button_jobs_option6">
+         <property name="text">
+          <string>Разработчик в маленькой компании [24999 р./мес.]</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QPushButton" name="button_jobs_option1">
          <property name="text">
-          <string>Уборщик в маке [8000 р./мес.]</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QPushButton" name="button_jobs_option10">
-         <property name="text">
-          <string>CEO регионального филиала в международной компании [320000 р./мес.]</string>
+          <string>Администратор группы в соцсети [3500 р./мес.]</string>
          </property>
         </widget>
        </item>
@@ -858,7 +823,7 @@
      <rect>
       <x>9</x>
       <y>19</y>
-      <width>121</width>
+      <width>141</width>
       <height>551</height>
      </rect>
     </property>
@@ -873,7 +838,7 @@
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>121</width>
+       <width>141</width>
        <height>531</height>
       </rect>
      </property>

@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 private:
     Ui::MainWindow      *ui;
     QTimer              *timer;     //главный таймер в игре
@@ -37,8 +38,6 @@ private:
     float               HP;                           //очки здоровья
     float               damage;                       //урон, который можно получить из-за рандомных событий
     int                 jobID;                        //ID работы, 0 = безработный (начальное значение), в onTick() будет проверяться ID работы и каждое первое число будет начисляться соответствующая зарплата
-    int                 sjID;                         //ID подработки
-    QString             sj;                           //название подработки
     unsigned int        xp;                           //опыт
 
     QMessageBox         *hunger_death;          //сообщение о гибели от голода
@@ -84,10 +83,6 @@ private slots:
     void jobsOption4();     //HTML-верстальщик в маленькой компании
     void jobsOption5();     //Backend-разработчик в маленькой компании
     void jobsOption6();     //Java-разработчик в средней компании
-    void jobsOption7();     //С++-разработчик в крупной компании
-    void jobsOption8();     //Тимлид в крупном проекте
-    void jobsOption9();     //Глава отдела в международной компании
-    void jobsOption10();    //CEO регионального филиала в международной компании
 
     // слоты для досуга
     void LeisureOption1();   //Помечтать о счастливом будущем
