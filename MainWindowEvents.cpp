@@ -50,6 +50,9 @@ void MainWindow::startGame()
 
 void MainWindow::onTick()
 {
+    //проверка срока обучения
+    if (year == 2026 && month == 7 && day == 1) defeat();
+
     //обновление даты
     ++day;
     process(&day, &month, &year);
@@ -299,3 +302,26 @@ bool MainWindow::LoadSave()
     startGame();
     return true;
   }
+
+void MainWindow::victory()
+{
+    timer->stop();
+
+    QMessageBox endingmessage;
+    endingmessage.setText("Победа");
+    endingmessage.setInformativeText("Поздравляем! Вы успешно окончили университет");
+    endingmessage.exec();
+
+    backToTitle();
+}
+
+void MainWindow::defeat()
+{
+    timer->stop();
+
+    QMessageBox endingmessage;
+    endingmessage.setText("Поражение");
+    endingmessage.setInformativeText("Срок обучения подошёл к концу и Вы не смогли получить диплом");
+    endingmessage.exec();
+
+}

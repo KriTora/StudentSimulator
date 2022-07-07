@@ -52,6 +52,7 @@ private:
     QMessageBox         *StartSession;           //сообщение о начале сессии
     QMessageBox         *FinalSession;           //сообщение о конце сессии
     QMessageBox         *ExamFail;            //сообщение о провале сессии
+
 private slots:
     void quit();            //кнопка "Выйти"
     void startGame();       //кнопка "Играть"
@@ -64,6 +65,9 @@ private slots:
     void toLeisure();       //кнопка "Досуг"
     bool LoadSave();        //загрузка сохранения
     bool Save();            //сохранение
+    void victory();         //победа
+    void defeat();          //поражение
+
     //слоты для магазина
     void shopOption1(); //Покопаться в мусорке
     void shopOption2(); //Съесть дошик
@@ -89,6 +93,7 @@ private slots:
     void jobsOption4();     //HTML-верстальщик в маленькой компании
     void jobsOption5();     //Backend-разработчик в маленькой компании
     void jobsOption6();     //Java-разработчик в средней компании
+
     // слоты для досуга
     void LeisureOption1();   //Помечтать о счастливом будущем
     void LeisureOption2();   //Покурить
@@ -103,6 +108,7 @@ private slots:
     void LeisureOption11();  //Сходить на свидание
     void LeisureOption12();  //Заняться экстремальными видами спорта
     void LeisureOption13();  //Отправиться в путешествие
+
     //слоты для образования
     void EducOption1();      //Сходить на пару
     void EducOption2();      //Послушать лекцию
@@ -115,7 +121,7 @@ private slots:
     void EducOption9();    // написать курсовую
     void EducOption10();  //купить курсовую
     void EducOption11();  //написать диплом
-     void EducOption12(); //купить диплом
+    void EducOption12(); //купить диплом
 
 };
 

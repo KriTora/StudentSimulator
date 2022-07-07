@@ -1,20 +1,24 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 void MainWindow::EducOption1()  // сходить на пару
 {
     mental_condition-=10;
     chance+=7;
 }
+
 void MainWindow::EducOption2()  //послушать лекцию
 {
     mental_condition-=15;
     chance+=10;
 }
+
 void MainWindow::EducOption3()  //сделать д/з
 {
     mental_condition-=10;
     chance+=7;
 }
+
 void MainWindow::EducOption4() //купить книги
 {
     if (money >= 100)  chance += 5;
@@ -24,6 +28,7 @@ void MainWindow::EducOption4() //купить книги
         Education_notEnoughMoney->show();
     }
 }
+
 void MainWindow::EducOption5() //купить курсы
 {
     if (money >= 1500)  chance += 20;
@@ -34,6 +39,7 @@ void MainWindow::EducOption5() //купить курсы
     }
 
 }
+
 void MainWindow::EducOption6() //нанять репетитора
 {
     if (money >= 2500)  chance += 33;
@@ -43,6 +49,7 @@ void MainWindow::EducOption6() //нанять репетитора
         Education_notEnoughMoney->show();
     }
 }
+
 void MainWindow::EducOption7() //попробовать сдать сессию
 {
     int temp= rand()%101;
@@ -65,6 +72,7 @@ void MainWindow::EducOption7() //попробовать сдать сессию
     }
 
 }
+
 void MainWindow::EducOption8() //купить сессию
 {
 if (money>=50000)
@@ -77,6 +85,7 @@ if (money>=50000)
 }
 else Education_notEnoughMoney->setText("Недостаточно денег! Нужно еще " + QString::number(50000-money) + " р.");
 }
+
 void MainWindow::EducOption9() //защитить курсовую
 {
     int temp= rand()%101;
@@ -100,6 +109,7 @@ void MainWindow::EducOption9() //защитить курсовую
     }
 
 }
+
 void MainWindow::EducOption10() //купить курсовую
 {
     if (money>=100000)
@@ -111,6 +121,7 @@ void MainWindow::EducOption10() //купить курсовую
     }
     else Education_notEnoughMoney->setText("Недостаточно денег! Нужно еще " + QString::number(100000-money) + " р.");
 }
+
 void MainWindow::EducOption11() //защитить диплом
 {
     int temp= rand()%101;
@@ -120,7 +131,7 @@ void MainWindow::EducOption11() //защитить диплом
     } else check =false;
     if (check)
     {
-        //тут должен быть метот конца игры,который ты сделаешь)
+        victory();
 
     } else
     {
@@ -133,7 +144,7 @@ void MainWindow::EducOption12() //купить диплом
 {
     if (money>=150000)
     {
-         //тут должен быть метот конца игры,который ты сделаешь)
+         victory();
     }
     else Education_notEnoughMoney->setText("Недостаточно денег! Нужно еще " + QString::number(150000-money) + " р.");
 }
